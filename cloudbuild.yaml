@@ -13,3 +13,5 @@ availableSecrets:
 substitutions:
   # REF: e.g. projects/secret-manager-project-458322/secrets/secret1/versions/2
   _VERSION_NAME: _VERSION_NAME
+options:
+  logging: CLOUD_LOGGING_ONLY
