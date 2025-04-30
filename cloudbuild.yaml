@@ -4,14 +4,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   entrypoint: 'bash'
-  args: ['-c', 'echo "SECRET: $$SECRET"', 'echo "_VERSION_NAME: _VERSION_NAME"']
+  args: ['-c', 'echo "SECRET: $$SECRET"']
   secretEnv: ['SECRET']
 availableSecrets:
   secretManager:
   - versionName: projects/secret-manager-project-458322/secrets/secret1/versions/2
     env: 'SECRET'
-substitutions:
-  # REF: e.g. projects/secret-manager-project-458322/secrets/secret1/versions/2
-  _VERSION_NAME: _VERSION_NAME
+# substitutions:
+#   # REF: e.g. projects/secret-manager-project-458322/secrets/secret1/versions/2
+#   _VERSION_NAME: _VERSION_NAME
 options:
   logging: CLOUD_LOGGING_ONLY
