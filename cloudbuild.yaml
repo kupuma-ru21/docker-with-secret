@@ -9,5 +9,15 @@ steps:
       - |
           SECRET=$(gcloud secrets versions access "projects/$PROJECT_ID/secrets/$_SECRET_NAME/versions/latest")
           echo "SECRET: $$SECRET"
+
+  - name: 'node:23'
+    entrypoint: 'bash'
+    args:
+      - -c
+      - |
+          cd frontend
+          npm install
+          npm run build
+
 options:
   logging: CLOUD_LOGGING_ONLY
