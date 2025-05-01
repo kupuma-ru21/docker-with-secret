@@ -16,8 +16,8 @@ steps:
       - -c
       - |
           cd frontend
-          npm install
-          npm run build
+          pnpm install
+          pnpm build
 
 options:
   logging: CLOUD_LOGGING_ONLY
