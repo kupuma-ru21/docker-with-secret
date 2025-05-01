@@ -16,6 +16,7 @@ steps:
       - -c
       - |
           cd frontend
+          npm install -g pnpm
           pnpm install
           pnpm build
 
