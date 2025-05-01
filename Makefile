@@ -11,3 +11,8 @@ docker-compose-build:
 docker-reset-and-build:
 	make docker-reset-all
 	make docker-compose-build
+
+build:
+	gcloud builds submit \
+  --region=us-west2 \
+  --config=cloudbuild.yaml
