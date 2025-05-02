@@ -18,5 +18,5 @@ RUN pnpm build
 FROM base
 COPY --from=build /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
-EXPOSE 4173
+EXPOSE 8080
 CMD [ "pnpm", "preview" ]
