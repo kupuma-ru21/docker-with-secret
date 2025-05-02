@@ -17,7 +17,7 @@ steps:
       [
         'build',
         '-t',
-        'gcr.io/$PROJECT_ID/frontend',
+        'us-central1-docker.pkg.dev/$PROJECT_ID/frontend',
         './frontend'
       ]
 
@@ -35,7 +35,7 @@ steps:
     args:
       [
         '-c',
-        'gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed --region us-west2 --allow-unauthenticated --project $PROJECT_ID'
+        'gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed --region us-central1 --allow-unauthenticated --project $PROJECT_ID'
       ]
 
 
