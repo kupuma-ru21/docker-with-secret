@@ -11,15 +11,12 @@ RUN corepack enable
 COPY . /app
 WORKDIR /app
 
-FROM base AS prod-deps
-RUN pnpm install --prod
-
 FROM base AS build
 RUN pnpm install
 RUN pnpm build
 
 FROM base
-COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/node_modules /app/node_modules
 COPY --from=build /app/dist /app/dist
 EXPOSE 3000
 CMD [ "pnpm", "preview" ]
