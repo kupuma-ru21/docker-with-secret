@@ -26,7 +26,7 @@ steps:
     args:
       [
         'push',
-        'gcr.io/$PROJECT_ID/frontend'
+        'us-central1-docker.pkg.dev/$PROJECT_ID/frontend'
       ]
 
   # Deploy to Cloud Run
