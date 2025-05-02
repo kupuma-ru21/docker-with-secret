@@ -35,7 +35,7 @@ steps:
     args:
       [
         '-c',
-        'gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed --region us-west2 --allow-unauthenticated --project $PROJECT_ID --container-port=4173'
+        'gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed --region us-west2 --allow-unauthenticated --project $PROJECT_ID --port=4173'
       ]
 
 
