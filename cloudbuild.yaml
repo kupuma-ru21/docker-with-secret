@@ -21,5 +21,23 @@ steps:
         './frontend'
       ]
 
+  # Push Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'gcr.io/$PROJECT_ID/frontend'
+      ]
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      [
+        '-c',
+        'gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed --region us-west2 --allow-unauthenticated --project $PROJECT_ID'
+      ]
+
+
 options:
   logging: CLOUD_LOGGING_ONLY
