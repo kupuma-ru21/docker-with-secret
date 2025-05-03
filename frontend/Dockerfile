@@ -14,7 +14,7 @@ FROM base AS build
 COPY . .
 RUN pnpm install
 RUN pnpm build
-RUN rm .env.production
+RUN rm -f .env.*
 
 FROM base
 COPY --from=build /app /app
