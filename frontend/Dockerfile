@@ -15,7 +15,6 @@ COPY . .
 RUN pnpm install
 RUN pnpm build
 RUN rm -f .env
-RUN rm -f .env.*
 
 FROM base
 COPY --from=build /app /app
