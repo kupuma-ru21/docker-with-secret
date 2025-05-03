@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly VITE_SECRET: string;
+  readonly VITE_SECRET2: string;
   // more env variables...
 }
 
