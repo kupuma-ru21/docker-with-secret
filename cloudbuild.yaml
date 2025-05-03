@@ -1,5 +1,6 @@
 # https://cloud.google.com/build/docs/build-push-docker-image
 # https://cloud.google.com/build/docs/securing-builds/use-secrets
+# VITE_SECRET2=$(gcloud secrets versions access "projects/$PROJECT_ID/secrets/$_VITE_SECRET2/versions/latest")
 
 steps:
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -9,7 +10,6 @@ steps:
       - |
           cat <<EOF > frontend/.env
           VITE_SECRET=$(gcloud secrets versions access "projects/$PROJECT_ID/secrets/$_VITE_SECRET/versions/latest")
-          VITE_SECRET2=$(gcloud secrets versions access "projects/$PROJECT_ID/secrets/$_VITE_SECRET2/versions/latest")
           EOF
 
   # Build Docker image
